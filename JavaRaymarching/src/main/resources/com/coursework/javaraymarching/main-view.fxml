@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--<?import com.coursework.javaraymarching.WrappedImageView?>-->
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coursework.javaraymarching.MainController">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Файл">
+                    <MenuItem onAction="#newScene" text="Новый" />
+                    <MenuItem onAction="#openScene" text="Открыть" />
+                    <MenuItem onAction="#saveScene" text="Сохранить сцену" />
+                    <MenuItem onAction="#saveImage" text="Сохранить изображение" />
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+            <ScrollPane>
+                <ImageView fx:id="Display" onMouseClicked="#holstMouseClick" onMouseMoved="#holstMouseMove" />
+            </ScrollPane>
+    </center>
+    <bottom>
+        <HBox style="-fx-background-color:white" BorderPane.alignment="CENTER">
+            <Label text="   X: " />
+            <Label fx:id="XPos" />
+            <Label text="   Y: " />
+            <Label fx:id="YPos" />
+            <Label text="   Z: " />
+            <Label fx:id="ZPos" />
+            <Label text="   Объект: " />
+            <Label fx:id="ShapeInfoLabel" />
+        </HBox>
+    </bottom>
+    <right>
+        <GridPane maxHeight="Infinity" minWidth="250" style="-fx-border-color:black; -fx-background-color:white">
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+            <TabPane maxHeight="Infinity" side="RIGHT" tabClosingPolicy="UNAVAILABLE" GridPane.vgrow="ALWAYS">
+                <tabs>
+                    <Tab text="Общие настройки">
+                        <GridPane maxWidth="Infinity">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" />
+                                <ColumnConstraints percentWidth="50" />
+                            </columnConstraints>
+                            <Label text="Разрешение изображения" GridPane.columnSpan="2" />
+                            <Label text="Ширина" GridPane.rowIndex="1" />
+                            <TextField fx:id="WidthEdit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="Высота" GridPane.rowIndex="2" />
+                            <TextField fx:id="HeightEdit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                            <Label text="Количество шагов" GridPane.rowIndex="3" />
+                            <TextField fx:id="MaxStepsEdit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                            <Label text="Область видимости" GridPane.rowIndex="4" />
+                            <TextField fx:id="MaxDistantEdit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                            <Label text="Количество отражений" GridPane.rowIndex="5" />
+                            <TextField fx:id="ReflectStepsEdit" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                            <Label text="Точность вычислений" GridPane.rowIndex="6" />
+                            <TextField fx:id="EpsilonEdit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                            <Label text="Резкость теней" GridPane.rowIndex="7" />
+                            <TextField fx:id="SoftOfShadowEdit" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                            <Label text="Точность теней" GridPane.rowIndex="8" />
+                            <TextField fx:id="EpsilonShadowEdit" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            <TitledPane animated="false" collapsible="false" text="Положение камеры" GridPane.columnSpan="2" GridPane.rowIndex="10">
+                                <GridPane>
+                                    <columnConstraints>
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                    </rowConstraints>
+                                    <Label text="X">
+                              <GridPane.margin>
+                                 <Insets left="2.0" right="2.0" />
+                              </GridPane.margin></Label>
+                                    <TextField fx:id="CamXEdit" prefColumnCount="6" GridPane.columnIndex="1" />
+                                    <Label text="Y" GridPane.columnIndex="2">
+                              <GridPane.margin>
+                                 <Insets left="2.0" right="2.0" />
+                              </GridPane.margin></Label>
+                                    <TextField fx:id="CamYEdit" prefColumnCount="6" GridPane.columnIndex="3" />
+                                    <Label text="Z" GridPane.columnIndex="4">
+                              <GridPane.margin>
+                                 <Insets left="2.0" right="2.0" />
+                              </GridPane.margin></Label>
+                                    <TextField fx:id="CamZEdit" prefColumnCount="6" GridPane.columnIndex="5" />
+                                </GridPane>
+                            </TitledPane>
+                            <TitledPane animated="false" collapsible="false" text="Целевая точка камеры" GridPane.columnSpan="2" GridPane.rowIndex="11">
+                                <GridPane>
+                                    <columnConstraints>
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                    </rowConstraints>
+                                    <Label text="X">
+                                        <GridPane.margin>
+                                            <Insets left="2.0" right="2.0" />
+                                        </GridPane.margin></Label>
+                                    <TextField fx:id="TargetXEdit" prefColumnCount="6" GridPane.columnIndex="1" />
+                                    <Label text="Y" GridPane.columnIndex="2">
+                                        <GridPane.margin>
+                                            <Insets left="2.0" right="2.0" />
+                                        </GridPane.margin></Label>
+                                    <TextField fx:id="TargetYEdit" prefColumnCount="6" GridPane.columnIndex="3" />
+                                    <Label text="Z" GridPane.columnIndex="4">
+                                        <GridPane.margin>
+                                            <Insets left="2.0" right="2.0" />
+                                        </GridPane.margin></Label>
+                                    <TextField fx:id="TargetZEdit" prefColumnCount="6" GridPane.columnIndex="5" />
+                                </GridPane>
+                            </TitledPane>
+                     <Label text="Фокусное расстояние" GridPane.rowIndex="12" />
+                     <TextField fx:id="FocalEdit" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                            <Label text="Цвет фона" GridPane.rowIndex="13" />
+                            <ColorPicker fx:id="BackgroundColorPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </Tab>
+                    <Tab text="Объекты сцены">
+                        <VBox>
+                            <GridPane>
+                                <ComboBox fx:id="ShapeCreator" maxWidth="Infinity" onAction="#addShape" value="Добавить фигуру">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Добавить фигуру" />
+                                            <String fx:value="Сфера" />
+                                            <String fx:value="Куб" />
+                                            <String fx:value="Кубическая рамка" />
+                                            <String fx:value="Цилиндр" />
+                                            <String fx:value="Капсула" />
+                                            <String fx:value="Конус" />
+                                            <String fx:value="Тор" />
+                                            <String fx:value="Фрагмент тора" />
+                                            <String fx:value="Пол" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                                <Button maxWidth="Infinity" onAction="#deleteShape" text="Удалить" GridPane.columnIndex="1" />
+                                <Button onAction="#shapeUp" text="↑" GridPane.columnIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="17.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="10.0" right="10.0" top="-1.0" />
+                                    </padding>
+                                </Button>
+                                <Button onAction="#shapeDown" text="↓" GridPane.columnIndex="3">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="10.0" right="10.0" top="-1.0" />
+                                    </padding>
+                                </Button>
+                                <columnConstraints>
+                                   <ColumnConstraints percentWidth="50" />
+                                   <ColumnConstraints percentWidth="25" />
+                                   <ColumnConstraints />
+                                   <ColumnConstraints />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints />
+                                </rowConstraints>
+                            </GridPane>
+
+                            <ListView fx:id="ShapeList" maxHeight="200" />
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50" />
+                                    <ColumnConstraints percentWidth="50" />
+                                </columnConstraints>
+                                <Label text="Имя фигуры" />
+                                <TextField fx:id="NameShapeEdit" GridPane.columnIndex="1" />
+                                <TitledPane animated="false" collapsible="false" text="Центр фигуры" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                    <GridPane>
+                                        <Label text="X">
+                                            <GridPane.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                            </GridPane.margin></Label>
+                                        <TextField fx:id="CenterXEdit" prefColumnCount="6" GridPane.columnIndex="1" />
+                                        <Label text="Y" GridPane.columnIndex="2">
+                                            <GridPane.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                            </GridPane.margin></Label>
+                                        <TextField fx:id="CenterYEdit" prefColumnCount="6" GridPane.columnIndex="3" />
+                                        <Label text="Z" GridPane.columnIndex="4">
+                                            <GridPane.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                            </GridPane.margin></Label>
+                                        <TextField fx:id="CenterZEdit" prefColumnCount="6" GridPane.columnIndex="5" />
+                                    <columnConstraints>
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                        <ColumnConstraints />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                    </rowConstraints>
+                                    </GridPane>
+                                </TitledPane>
+
+                                <Label text="Поворот фигуры" GridPane.rowIndex="2" />
+                                <HBox GridPane.rowIndex="3">
+                                    <Label text="X: " />
+                                    <Label fx:id="RotateXLabel" />
+                                    <Label text="°" />
+                                </HBox>
+                                <HBox GridPane.rowIndex="4">
+                                    <Label text="Y: " />
+                                    <Label fx:id="RotateYLabel" />
+                                    <Label text="°" />
+                                </HBox>
+                                <HBox GridPane.rowIndex="5">
+                                    <Label text="Z: " />
+                                    <Label fx:id="RotateZLabel" />
+                                    <Label text="°" />
+                                </HBox>
+                                <Slider fx:id="RotateXSlider" max="360.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </Slider>
+                                <Slider fx:id="RotateYSlider" max="360.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </Slider>
+                                <Slider fx:id="RotateZSlider" max="360.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                                    <GridPane.margin>
+                                        <Insets left="40.0" />
+                                    </GridPane.margin>
+                                </Slider>
+                                <Label text="Радиус сглаживания" GridPane.rowIndex="6" />
+                                <TextField fx:id="SmoothRadiusEdit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                <Label text="Радиус закругления" GridPane.rowIndex="7" />
+                                <TextField fx:id="RoundingRadiusEdit" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <Label text="Режим работы" GridPane.rowIndex="8" />
+                                <ComboBox fx:id="OperationModeEdit" maxWidth="Infinity" value="Объединение" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Объединение" />
+                                            <String fx:value="Вычитание" />
+                                            <String fx:value="Пересечение" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                                <Label text="Свойства материала" GridPane.rowIndex="9" />
+                                <Label text="Базовый цвет" GridPane.rowIndex="10" />
+                                <Label text="Рассеянный цвет" GridPane.rowIndex="11" />
+                                <ColorPicker fx:id="AmbientColorPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                <ColorPicker fx:id="DiffuseColorPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                <CheckBox fx:id="SpecularFlag" mnemonicParsing="false" text="Наличие бликов" GridPane.rowIndex="12" />
+                                <Label text="Коэффициент блеска" GridPane.rowIndex="13" />
+                                <TextField fx:id="SpecularEdit" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                <HBox GridPane.rowIndex="14">
+                                    <Label text="Отражение: " />
+                                    <Label fx:id="ReflectivityLabel" />
+                                    <Label text="\%" />
+                                </HBox>
+                                <Slider fx:id="ReflectivitySlider" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+
+                                <Label fx:id="LabelEdit1" GridPane.rowIndex="15" />
+                                <Label fx:id="LabelEdit2" GridPane.rowIndex="16" />
+                                <Label fx:id="LabelEdit3" GridPane.rowIndex="17" />
+                                <Label fx:id="LabelEdit4" GridPane.rowIndex="18" />
+                                <Label fx:id="LabelSlider" GridPane.rowIndex="19" />
+                                <TextField fx:id="SpecificEdit1" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                                <TextField fx:id="SpecificEdit2" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                                <TextField fx:id="SpecificEdit3" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                                <TextField fx:id="SpecificEdit4" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                                <Slider fx:id="SpecificSlider" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                            <rowConstraints>
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                            </rowConstraints>
+                            </GridPane>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Источники света">
+                        <VBox>
+                            <GridPane>
+                                <ComboBox fx:id="LightCreator" onAction="#addLight" value="Добавить источник света">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Добавить источник света" />
+                                            <String fx:value="Направленный свет" />
+                                            <String fx:value="Точечный свет" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                                <Button onAction="#deleteLight" text="Удалить" GridPane.columnIndex="1" />
+                            <columnConstraints>
+                                <ColumnConstraints />
+                           <ColumnConstraints />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                            </rowConstraints>
+                            </GridPane>
+                            <ListView fx:id="LightList" maxHeight="200"/>
+                            <GridPane>
+                                <TitledPane fx:id="LightParam" animated="false" collapsible="false" GridPane.columnSpan="2">
+                                    <GridPane>
+                                        <Label text="X">
+                                            <GridPane.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                            </GridPane.margin></Label>
+                                        <TextField fx:id="LightXEdit" prefColumnCount="6" GridPane.columnIndex="1" />
+                                        <Label text="Y" GridPane.columnIndex="2">
+                                            <GridPane.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                            </GridPane.margin></Label>
+                                        <TextField fx:id="LightYEdit" prefColumnCount="6" GridPane.columnIndex="3" />
+                                        <Label text="Z" GridPane.columnIndex="4">
+                                            <GridPane.margin>
+                                                <Insets left="2.0" right="2.0" />
+                                            </GridPane.margin></Label>
+                                        <TextField fx:id="LightZEdit" prefColumnCount="6" GridPane.columnIndex="5" />
+                                        <columnConstraints>
+                                            <ColumnConstraints />
+                                            <ColumnConstraints />
+                                            <ColumnConstraints />
+                                            <ColumnConstraints />
+                                            <ColumnConstraints />
+                                            <ColumnConstraints />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints />
+                                        </rowConstraints>
+                                    </GridPane>
+                                </TitledPane>
+                                <Label text="Фоновое освещение" GridPane.rowIndex="1" />
+                                <Label text="Прямое освещение" GridPane.rowIndex="2" />
+                                <ColorPicker fx:id="AmbientLightPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <ColorPicker fx:id="DirectLightPicker" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label text="Затухание фонового света" GridPane.rowIndex="3" />
+                                <Label text="Затухание основного света" GridPane.rowIndex="4" />
+                                <TextField fx:id="AmbientKEdit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField fx:id="DirectKEdit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <columnConstraints>
+                                   <ColumnConstraints />
+                                   <ColumnConstraints />
+                                </columnConstraints>
+                                <rowConstraints>
+                                   <RowConstraints />
+                                   <RowConstraints />
+                                   <RowConstraints />
+                                   <RowConstraints />
+                                   <RowConstraints />
+                                </rowConstraints>
+                            </GridPane>
+                        </VBox>
+                    </Tab>
+                </tabs>
+            </TabPane>
+            <Button onAction="#update" text="Обновить" GridPane.rowIndex="1" />
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </right>
+</BorderPane>

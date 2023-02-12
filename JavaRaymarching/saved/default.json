@@ -1,0 +1,484 @@
+{
+  "camera" : {
+    "position" : {
+      "x" : 37.0,
+      "y" : 30.0,
+      "z" : -37.0
+    },
+    "target" : {
+      "x" : -10.0,
+      "y" : 9.0,
+      "z" : 0.0
+    },
+    "focal" : 2.5
+  },
+  "settings" : {
+    "width" : 1180,
+    "height" : 750,
+    "maxSteps" : 800,
+    "maxDistant" : 100,
+    "epsilon" : 0.001,
+    "reflectSteps" : 4,
+    "softOfShadow" : 7.0,
+    "epsilonShadow" : 0.01,
+    "backgroundColor" : {
+      "x" : 0.5294118,
+      "y" : 0.80784315,
+      "z" : 0.92156863
+    }
+  },
+  "shapeManager" : {
+    "shapes" : [ {
+      "@type" : "Sphere",
+      "center" : {
+        "x" : 5.0,
+        "y" : 1.0,
+        "z" : 0.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 1.0,
+          "y" : 0.0,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 0.0,
+          "y" : 0.25,
+          "z" : 1.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "radius" : 5.0
+    }, {
+      "@type" : "Sphere",
+      "center" : {
+        "x" : 6.0,
+        "y" : 4.0,
+        "z" : 0.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 1.0,
+          "y" : 0.0,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 0.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 10.0,
+        "specular" : true
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 1.0,
+      "roundingRadius" : 0.0,
+      "mode" : 1,
+      "radius" : 3.0
+    }, {
+      "@type" : "Floor",
+      "center" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.38842425,
+          "y" : 0.8974359,
+          "z" : 0.2818869
+        },
+        "diffuseColor" : {
+          "x" : 0.0,
+          "y" : 0.5019608,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.1,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "h" : 0.0
+    }, {
+      "@type" : "BoxFrame",
+      "center" : {
+        "x" : -25.0,
+        "y" : 3.5,
+        "z" : -25.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.6,
+          "y" : 0.3019608,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 0.6,
+          "y" : 0.3019608,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 1,
+      "size" : {
+        "x" : 10.0,
+        "y" : 10.0,
+        "z" : 10.0
+      },
+      "thickness" : 1.0
+    }, {
+      "@type" : "Sphere",
+      "center" : {
+        "x" : -25.0,
+        "y" : 5.0,
+        "z" : 0.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 0.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.8,
+        "specularity" : 100.0,
+        "specular" : true
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "radius" : 5.0
+    }, {
+      "@type" : "Box",
+      "center" : {
+        "x" : -25.0,
+        "y" : 4.0,
+        "z" : -10.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 45.0,
+        "y" : 45.0,
+        "z" : 45.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "size" : {
+        "x" : 5.0,
+        "y" : 5.0,
+        "z" : 5.0
+      }
+    }, {
+      "@type" : "BoxFrame",
+      "center" : {
+        "x" : -25.0,
+        "y" : 5.0,
+        "z" : 20.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.5019608,
+          "y" : 0.0,
+          "z" : 0.5019608
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 0.0,
+          "z" : 1.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "size" : {
+        "x" : 10.0,
+        "y" : 10.0,
+        "z" : 10.0
+      },
+      "thickness" : 1.0
+    }, {
+      "@type" : "Torus",
+      "center" : {
+        "x" : -10.0,
+        "y" : 5.0,
+        "z" : 0.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.0,
+          "y" : 1.0,
+          "z" : 1.0
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.05172414,
+        "specularity" : 100.0,
+        "specular" : true
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "thickness" : 1.0,
+      "radius" : 5.0
+    }, {
+      "@type" : "CappedTorus",
+      "center" : {
+        "x" : -10.0,
+        "y" : 5.0,
+        "z" : 20.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 1.0
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 1.0
+        },
+        "reflectivity" : 0.50574714,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "radius" : 5.0,
+      "thickness" : 1.0,
+      "angle" : 180.0
+    }, {
+      "@type" : "Cone",
+      "center" : {
+        "x" : 5.0,
+        "y" : 10.0,
+        "z" : 20.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.0,
+          "y" : 0.2,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 0.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 6.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "height" : 10.0,
+      "angle" : 45.0
+    }, {
+      "@type" : "Capsule",
+      "center" : {
+        "x" : 5.0,
+        "y" : 1.0,
+        "z" : -20.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 1.0,
+          "y" : 0.6730769,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 60.0,
+        "specular" : true
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "height" : 5.0,
+      "radius" : 2.0
+    }, {
+      "@type" : "Cylinder",
+      "center" : {
+        "x" : -10.0,
+        "y" : 5.0,
+        "z" : -20.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 0.0,
+          "y" : 0.101960786,
+          "z" : 0.5019608
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 1.0,
+          "z" : 1.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 0.0,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 0,
+      "height" : 11.0,
+      "radius" : 2.5
+    }, {
+      "@type" : "Box",
+      "center" : {
+        "x" : -10.0,
+        "y" : 5.0,
+        "z" : -20.0
+      },
+      "material" : {
+        "ambientColor" : {
+          "x" : 1.0,
+          "y" : 0.0,
+          "z" : 0.0
+        },
+        "diffuseColor" : {
+          "x" : 1.0,
+          "y" : 0.0,
+          "z" : 0.0
+        },
+        "reflectivity" : 0.0,
+        "specularity" : 100.0,
+        "specular" : false
+      },
+      "rotate" : {
+        "x" : 0.0,
+        "y" : 8.227844,
+        "z" : 0.0
+      },
+      "smoothRadius" : 0.0,
+      "roundingRadius" : 0.0,
+      "mode" : 1,
+      "size" : {
+        "x" : 4.5,
+        "y" : 10.0,
+        "z" : 4.5
+      }
+    } ],
+    "names" : [ "Внешний шар", "Вычитаемый шар", "Поверхность сцены", "Квадратная яма", "Отражающая сфера", "Желтый куб", "BoxFrame", "Тор", "Фрагмент тора", "Конус", "Capsule", "Cylinder", "Box" ]
+  },
+  "lightManager" : {
+    "lights" : [ {
+      "@type" : "PointLight",
+      "ambientBase" : {
+        "x" : 0.35,
+        "y" : 0.35,
+        "z" : 0.35
+      },
+      "directBase" : {
+        "x" : 0.5,
+        "y" : 0.5,
+        "z" : 0.5
+      },
+      "position" : {
+        "x" : 10.0,
+        "y" : 30.0,
+        "z" : 10.0
+      },
+      "ambientK" : 0.0,
+      "directK" : 0.0
+    } ],
+    "names" : [ "PointLight" ]
+  }
+}
